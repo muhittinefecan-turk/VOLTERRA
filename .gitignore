@@ -1,0 +1,33 @@
+# Rust / Cargo build artifacts
+/target/
+**/*.rs.bk
+
+# Generated Universal FFI libraries (rebuilt via ./scripts/build-universal.sh)
+apps/VolterraMac/Sources/Bridge/libvolterra_ffi.a
+apps/VolterraMac/Sources/Bridge/libvolterra_ffi.dylib
+
+# Swift Package Manager & Xcode build artifacts
+**/.build/
+**/.swiftpm/
+**/DerivedData/
+**/xcuserdata/
+*.xcodeproj
+*.xcworkspace
+
+# Temporary binaries & scratch files
+/main
+/challenge_c.c
+/challenge_swift.swift
+*.partial
+*.partial.json
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Local agent / IDE scratch directories
+/.agents/
+/.vscode/
+/.idea/

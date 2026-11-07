@@ -1,0 +1,16 @@
+[package]
+name = "volterra-platform-macos"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Darwin low-level filesystem, volume UUID, IOKit profile, direct I/O and metadata engine for VOLTERRA"
+
+[dependencies]
+libc.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

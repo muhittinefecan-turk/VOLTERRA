@@ -1,0 +1,21 @@
+[package]
+name = "volterra-journal"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "SQLite WAL-based durable state journaling and crash recovery for VOLTERRA"
+
+[dependencies]
+rusqlite.workspace = true
+parking_lot.workspace = true
+chrono.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+volterra-integrity.workspace = true
+volterra-manifest.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

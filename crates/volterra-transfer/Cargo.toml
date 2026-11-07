@@ -1,0 +1,28 @@
+[package]
+name = "volterra-transfer"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Safe POSIX chunk reader/writer, memory buffer backpressure, 6-step atomic publication, and transfer scheduler for VOLTERRA"
+
+[dependencies]
+volterra-platform-macos = { workspace = true }
+volterra-integrity = { workspace = true }
+volterra-manifest = { workspace = true }
+volterra-journal = { workspace = true }
+volterra-recovery = { workspace = true }
+volterra-profiler = { workspace = true }
+volterra-optimizer = { workspace = true }
+libc = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+parking_lot = { workspace = true }
+chrono = { workspace = true }
+crossbeam-channel = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

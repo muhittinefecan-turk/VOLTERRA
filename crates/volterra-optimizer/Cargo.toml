@@ -1,0 +1,23 @@
+[package]
+name = "volterra-optimizer"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Adaptive chunk engine, directional I/O schedulers, bottleneck detector, and closed-loop feedback optimizer for VOLTERRA"
+
+[dependencies]
+volterra-platform-macos = { workspace = true }
+volterra-journal = { workspace = true }
+volterra-profiler = { workspace = true }
+libc = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+parking_lot = { workspace = true }
+chrono = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

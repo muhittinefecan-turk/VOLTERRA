@@ -1,0 +1,63 @@
+[package]
+name = "volterra-test-suite"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+volterra-platform-macos = { workspace = true }
+volterra-integrity = { workspace = true }
+volterra-manifest = { workspace = true }
+volterra-journal = { workspace = true }
+volterra-recovery = { workspace = true }
+volterra-profiler = { workspace = true }
+volterra-optimizer = { workspace = true }
+volterra-transfer = { workspace = true }
+volterra-core = { workspace = true }
+volterra-ffi = { workspace = true }
+
+# Utilities & System
+tempfile = { workspace = true }
+chrono = { workspace = true }
+libc = { workspace = true }
+uuid = { workspace = true }
+blake3 = { workspace = true }
+crossbeam-channel = { workspace = true }
+parking_lot = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[lib]
+name = "volterra_test_suite"
+path = "src/lib.rs"
+
+[[test]]
+name = "tier1_feature_coverage"
+path = "e2e/tier1_feature_coverage.rs"
+
+[[test]]
+name = "tier2_boundaries"
+path = "e2e/tier2_boundaries.rs"
+
+[[test]]
+name = "tier3_cross_feature"
+path = "e2e/tier3_cross_feature.rs"
+
+[[test]]
+name = "tier4_realworld_scenarios"
+path = "e2e/tier4_realworld_scenarios.rs"
+
+[[test]]
+name = "test_fixed_vs_adaptive"
+path = "e2e/test_fixed_vs_adaptive.rs"
+
+[[test]]
+name = "tier5_adversarial_boundaries"
+path = "e2e/tier5_adversarial_boundaries.rs"
+
+[[test]]
+name = "tier5_adversarial_fault_recovery"
+path = "e2e/tier5_adversarial_fault_recovery.rs"
+

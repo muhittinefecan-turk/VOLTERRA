@@ -1,0 +1,75 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/volterra-platform-macos",
+    "crates/volterra-integrity",
+    "crates/volterra-manifest",
+    "crates/volterra-journal",
+    "crates/volterra-recovery",
+    "crates/volterra-profiler",
+    "crates/volterra-optimizer",
+    "crates/volterra-transfer",
+    "crates/volterra-core",
+    "crates/volterra-ffi",
+    "tests",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+authors = ["VOLTERRA Authors"]
+license = "Proprietary"
+repository = "https://github.com/volterra/volterra"
+
+[workspace.dependencies]
+# Internal workspace crates
+volterra-platform-macos = { path = "crates/volterra-platform-macos" }
+volterra-integrity = { path = "crates/volterra-integrity" }
+volterra-manifest = { path = "crates/volterra-manifest" }
+volterra-journal = { path = "crates/volterra-journal" }
+volterra-recovery = { path = "crates/volterra-recovery" }
+volterra-profiler = { path = "crates/volterra-profiler" }
+volterra-optimizer = { path = "crates/volterra-optimizer" }
+volterra-transfer = { path = "crates/volterra-transfer" }
+volterra-core = { path = "crates/volterra-core" }
+volterra-ffi = { path = "crates/volterra-ffi" }
+
+# Database & SQLite
+rusqlite = { version = "0.32", features = ["bundled", "backup", "chrono"] }
+parking_lot = "0.12"
+chrono = { version = "0.4", features = ["serde"] }
+
+# Concurrency & Channels
+crossbeam-channel = "0.5"
+uuid = { version = "1.10", features = ["v4", "serde"] }
+
+# System & Darwin Libc
+libc = "0.2"
+
+# Cryptographic Integrity
+blake3 = "1.5"
+
+# Error Handling & Diagnostics
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# Serialization & Manifest
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Testing utilities
+tempfile = "3.13"
+
+[profile.dev]
+opt-level = 0
+debug = true
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "unwind"
+strip = false
+debug = 1

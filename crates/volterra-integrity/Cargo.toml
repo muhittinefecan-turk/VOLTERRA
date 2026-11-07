@@ -1,0 +1,17 @@
+[package]
+name = "volterra-integrity"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "BLAKE3 cryptographic hashing and raw media readback verification engine for VOLTERRA"
+
+[dependencies]
+blake3.workspace = true
+libc.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

@@ -1,0 +1,5 @@
+module CVolterra [system] {
+    header "volterra_ffi.h"
+    link "volterra_ffi"
+    export *
+}

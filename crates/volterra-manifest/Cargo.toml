@@ -1,0 +1,19 @@
+[package]
+name = "volterra-manifest"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+description = "Recursive filesystem tree scanner, deterministic manifest cataloging, and pre-publication source mutation detection for VOLTERRA"
+
+[dependencies]
+volterra-integrity.workspace = true
+volterra-platform-macos.workspace = true
+libc.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
